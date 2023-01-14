@@ -108,6 +108,7 @@ form .sex:hover .sex-menu{
     background-color: rgb(202, 255, 255);
 }
 .header-container img{
+    min-height: 20%;
     max-height: 150px;
     max-width: 150px;
     object-fit: fill;
@@ -119,6 +120,8 @@ form .sex:hover .sex-menu{
     margin-top: 100px;
     margin-bottom: 100px;
     border-top: 1px solid rgb(0, 84, 132);
+    overflow: scroll;
+    height: 80%;
 }
 
 .section h1{

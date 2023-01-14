@@ -69,11 +69,14 @@
     <header>
         <div class = "header-container">
             <a href = "index.html"><img src = "logo.png" alt = "logo"></a>
-            <div>
-                <a href = "profile.html">Profile</a>
+            <div style="background-color: rgb(30, 166, 166); color: white;" onclick="updateSection('home')">
+                Home
             </div>
-            <div>
-                <a href = "mentors.html"> Mentors </a>
+            <div onclick="updateSection('profile')">
+                Profile
+            </div>
+            <div onclick="updateSection('mentors')">
+                Mentors
             </div>
             <div>
                 <a href = "#contact-anchor"> Contact </a>
@@ -118,6 +121,10 @@
                 -Felicia
             </p>
         </div>
+    </div>
+    <div class="section" style="display: none;">
+    </div>
+    <div class="section" style="display: none;">
     </div>
     <footer>
         <h1 id="contact-anchor">
