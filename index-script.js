@@ -1,3 +1,7 @@
+function dynamicallyCreatedHTML(){
+    generateTable();
+}
+
 var currentSection = "home";
 
 function updateSection(section){
@@ -38,8 +42,6 @@ function updateSection(section){
     el1.style.backgroundColor = "rgb(30, 166, 166)";
     el1.style.color = "white";
     currentSection = section;
-    
-    console.log(currentSection);
 }
 
 function showForm(){
@@ -51,4 +53,17 @@ function expandForm(){
 function closeForm(){
     document.getElementById("#form").style.display = "none";
     document.getElementsByClassName("registration")[0].style.display = "none";
+}
+function generateTable(){
+    let el = document.getElementById("availability-table").childNodes[1];
+    let newBody = "";
+    let style = "";
+    for(i=0; i <= 24; i++){
+        for(j=1; j<= 7; j++){
+            style = "style = 'background-color: "+ ((Math.random() < 0.5)? "rgba(255, 0, 0, 0.7)" : "rgba(0, 255, 0, 0.7)") +";'";
+            newBody += "<td " + style + "> " + i.toString().padStart(2, "0") + ":00 </td>";
+        }
+        el.insertAdjacentHTML("beforeend", "<tr>" + newBody + "</tr>");
+        newBody = "";
+    }
 }

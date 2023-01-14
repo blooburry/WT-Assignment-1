@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index-style.css">
     <script src="index-script.js"></script>
 </head>
-<body>
+<body onload="dynamicallyCreatedHTML()">
     <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
     <form id="#form">
         <span id="close" onclick="closeForm()" style="position: absolute; right: 15px; top: 10px;">Ⓧ</span>
@@ -123,8 +123,50 @@
         </div>
     </div>
     <div class="section" style="display: none;">
+        <!-- TODO: make a user profile here-->
+        <!-- TODO: Maddy-->
+        <div class="section-header">
+            <h1> Johan Anand </h1>
+            <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
+            <span class="review-stars"> ★★★★ </span> 8 students helped
+        </div>
+        <div class="section-about">
+            <h2> About </h2>
+            <img src="image_3.png" style="float:left;">
+            <p>
+I'm Johan Anand, a physics lecturer and master of fluid dynamics. I have been teaching physics for over 20 years and have a deep understanding of the subject. My research focuses on applying the principles of fluid dynamics to create innovative solutions to energy and environmental challenges.
+I'm passionate about sharing my knowledge and mentoring students to help them reach their full potential. I believe in being a source of guidance and support, helping them to explore and understand the topic. I'm very patient and have a knack for breaking down complex ideas into understandable concepts.
+I'm an excellent communicator and have an approachable nature that allows students to feel comfortable asking questions. I'm also an excellent listener, taking time to understand each student's individual learning style and goals.
+Whether it's helping them understand the basics of physics or helping them develop their problem-solving skills, I'm confident that I can be a great mentor.
+            </p>     
+        </div>
+        <div class="section-availability">
+            <h2> Availability </h2>
+            <table id="availability-table">
+                <tr>
+                    <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
+                </tr>
+            </table>
+        </div>
+        <div class="section-contact">
+            <h2> Contact </h2>
+            <img src="image_4.png" style="float:right;">
+            <p>
+                <br>
+                US of A <br>
+                Address: 123 Dream Street <br>
+                Zipcode: 12345 <br>
+                Email: lostsocks@dreamland.com <br>
+                Tel: (123) 456-7890
+                <br>
+            </p>
+            
+        </div>
     </div>
     <div class="section" style="display: none;">
+        <!-- TODO make a searchbox here where you can search for mentors-->
+        <!-- TODO: Ibo -->
+        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
     </div>
     <footer>
         <h1 id="contact-anchor">

@@ -150,6 +150,24 @@ form .sex:hover .sex-menu{
     object-fit: contain;
 }
 
+.section > .section-header{
+    text-align: center;
+}
+
+.section > .section-header > h1{
+    border-bottom: 1px solid rgb(0, 74, 131);
+}
+
+.section > .section-availability > #availability-table{
+    font-size: inherit;
+    margin: auto;
+}
+
+.section > .section-availability > #availability-table > tbody > tr > *{
+    min-width: 100px;
+    text-align: center;
+}
+
 footer{
     background-color: rgba(0, 97, 172, 0.8);
 }
