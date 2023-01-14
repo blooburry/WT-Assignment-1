@@ -6,23 +6,74 @@ body{
 }
 
 form {
-    display: flex;
+    display: none;
+    /*flexbox*/
     align-items: flex-end;
     flex-wrap: wrap;
     gap: 12px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    /*positioning*/
     z-index: 1000;
-  }
-  .name {
-    flex-grow: 1;
-    flex-basis: 120px;
-  }
-  .email {
-    flex-grow: 3;
-    flex-basis: 170px;
-  }
-  button {
-    flex-grow: 1;
-    flex-basis: 70px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    /*general*/
+    height: 60%;
+    width: 40%;
+    background-color: white;
+    /*animation*/
+    animation: slideAndSkew .2s ease-in;
+    /*block*/
+    padding: 20px;
+    padding-top: 25px;
+    border: 1px solid aqua;
+    border-radius: 10px;
+}
+@keyframes slideAndSkew{
+    0%{
+        background-color: rgba(255, 255, 255, 0.0);
+        transform: skewX(53deg) translateX(-500px);
+    }
+    60%{
+        transform: translateX(0px);
+    }
+    62%{
+        tranform: skewX(0deg) translateX(30px);
+    }
+    100%{
+        background-color: rgba(255, 255, 255, 1.0);
+        transform: skew(0deg);
+    }
+}
+form > .registration{
+    display: none;
+    min-height: 50%;
+}
+form h1{
+    text-align: center;
+    color: rgb(30, 166, 166);
+    margin: 10px;
+}
+form button{
+    font-size: inherit;
+    font-family: inherit;
+}
+form .sex:hover .sex-menu{
+    display:block
+}
+.sex-menu {
+    display: none;
+    position: absolute;
+    left: 120px;
+    background-color: rgb(216, 255, 242);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
   }
 
 .header-container{

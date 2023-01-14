@@ -5,24 +5,62 @@
     <title>Manatee Mentorates</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="index-style.css">
+    <script src="index-script.js"></script>
 </head>
 <body>
-    <form>
-        <label class="name" for="name-field">
-          Name:
-          <input id="name-field" />
-        </label>
-        <label
-          class="email"
-          for="email-field"
-        >
-          Email:
-          <input
-            id="email-field"
-            type="email"
-          />
-        </label>
-        <button>
+    <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
+    <form id="#form">
+        <div class="login">
+            <h1> Log In </h1>
+            <label class="name" for="name-field">
+            Username:
+            <input id="username-field" /><br>
+            </label>
+            <label class="password" for="password-field">
+                Password:
+                <input id="password-field" />
+            </label>
+        </div>
+        <p onclick="expandForm()">
+            Not yet a user? <span style="color: blue;"> Sign up! </span>
+        </p>
+        <div class="registration">
+            <h1> Register </h1>
+            <label class="address" for="address-field">
+                Address:
+                <input id="address-field"/>
+            </label><br>
+            <label class="country" for="country-field">
+                Country:
+                <input id="country-field"/>
+            </label><br>
+            <label class="zipcode" for="zipcode-field">
+                Zipcode:
+                <input id="zipcode-field"/>
+            </label><br>
+            <label class="email" for="email-field">
+                Email:
+                <input id="email-field" type="email"/>
+            </label><br>
+            <label class="sex" for="sex-field">
+                Sex:
+                <input id="sex-field"/>
+                <div class="sex-menu">
+                    Yes<br>No
+                </div>
+            </label><br>
+            </label>
+            <label class="language" for="language-field">
+                Language:
+                <input id="language-field"/>
+            </label><br>
+            <label class="bio" for="bio-field">
+                Bio (optional):
+                <input id="bio-field"/>
+            </label><br>
+            User id: 123456789AB
+        </div>
+        <button onclick="closeForm()">
           Submit
         </button>
       </form>
@@ -39,8 +77,8 @@
             <div>
                 <a href = "#contact-anchor"> Contact </a>
             </div>
-            <div>
-                Sign In / Sign Up
+            <div onclick="showForm()">
+                <a href = "#form"> Sign In / Sign Up </a>
             </div>
         </div>
     </header>
