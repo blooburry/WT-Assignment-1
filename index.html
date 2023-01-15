@@ -9,7 +9,7 @@
 </head>
 <body onload="dynamicallyCreatedHTML()">
     <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
-    <form id="#form">
+    <form id="login-form">
         <span id="close" onclick="closeForm()" style="position: absolute; right: 15px; top: 10px;">Ⓧ</span>
         <div class="login">
             <h1> Log In </h1>
@@ -64,7 +64,7 @@
         <button onclick="closeForm()">
           Submit
         </button>
-      </form>
+    </form>
 
     <header>
         <div class = "header-container">
@@ -122,8 +122,8 @@
                 -Felicia
             </p>
         </div>
-    </div>
-    <div class="section">
+        </div>
+        <div class="section" id="profile">
         <!-- TODO: make a user profile here-->
         <!-- TODO: Maddy-->
         <div class="section-header">
@@ -163,45 +163,46 @@ Whether it's helping them understand the basics of physics or helping them devel
             </p>
             
         </div>
-    </div>
-    <div class="section">
+        </div>
+        <div class="section" id="mentors">
         <!-- TODO make a searchbox here where you can search for mentors-->
         <!-- TODO: Ibo -->
-        <div class="searchbox">
-            <form>
-              <label for="skills">Skills:</label>
-              <input type="text" id="skills" name="skills">
-            
-              <label for="jobcat">Job Category:</label>
-              <select id="jobcat" name="jobcat">
-                <option value="">Select A category</option>
-                <option value="accounting and finance">Accounting and finance</option>
-                <option value="banking">Banking</option>
-                <option value="business and management">Business and Management</option>
-                <option value="computing and IT">Computing and IT</option>  
-                <option value="consultancy">Consultancy</option> 
-                <option value="education">Education</option> 
-                <option value="healthcare & medicine">Healthcare & Medicine</option> 
-                <option value="legal">Legal</option> 
-                <option value="marketing and pr">Marketing and PR</option>
-                <option value="science and research">Science and Research</option> 
-                  
-              </select>
-            
-              <label for="company">Company:</label>
-              <input type="text" id="company" name="company">
-            
-              <label for="location">Location:</label>
-              <input type="text" id="location" name="location">
-            
-              <label for="review">Review:</label>
-              <input type="number" id="review" name="review" min="0" max="5">
-            
-              <input type="submit" value="Search">
-            </form>
-          </div>
+            <div class="searchbox">
+                <form id="search-form">
+                    <label for="skills">Skills:</label>
+                    <input type="text" id="skills" name="skills">
+                    
+                    <label for="jobcat">Job Category:</label>
+                    <select id="jobcat" name="jobcat">
+                        <option value="">Select A category</option>
+                        <option value="accounting and finance">Accounting and finance</option>
+                        <option value="banking">Banking</option>
+                        <option value="business and management">Business and Management</option>
+                        <option value="computing and IT">Computing and IT</option>  
+                        <option value="consultancy">Consultancy</option> 
+                        <option value="education">Education</option> 
+                        <option value="healthcare & medicine">Healthcare & Medicine</option> 
+                        <option value="legal">Legal</option> 
+                        <option value="marketing and pr">Marketing and PR</option>
+                        <option value="science and research">Science and Research</option> 
+                        
+                    </select>
+                    
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" name="company">
+                    
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                    
+                    <label for="review">Review:</label>
+                    <input type="number" id="review" name="review" min="0" max="5">
+                    
+                    <input type="submit" value="Search">
+                </form>
+            </div>
           
         <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
+        </div>
     </div>
     <footer>
         <h1 id="contact-anchor">
