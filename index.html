@@ -69,14 +69,14 @@
     <header>
         <div class = "header-container">
             <a href = "index.html"><img src = "logo.png" alt = "logo"></a>
-            <div style="background-color: rgb(30, 166, 166); color: white;" onclick="updateSection('home')">
-                Home
+            <div>
+                <a href="#home" onclick="highlightHeader('home')"> Home </a>
             </div>
-            <div onclick="updateSection('profile')">
-                Profile
+            <div>
+                <a href="#profile" onclick="highlightHeader('profile')"> Profile </a>
             </div>
-            <div onclick="updateSection('mentors')">
-                Mentors
+            <div>
+                <a href="#mentors" onclick="highlightHeader('mentors')"> Mentors </a>
             </div>
             <div>
                 <a href = "#contact-anchor"> Contact </a>
@@ -86,87 +86,89 @@
             </div>
         </div>
     </header>
-    <div class="section">
-        <div>
-            <h1>
-                Manatee Mentorates: Where You Find The Mentor For <span style = "text-decoration: underline;">You.</span>
-            </h1>
-            <p>
-                Manatee Mentorates is a mentoring programme that offers individualised support to university students dealing with stress and mental health issues. Our programme pairs each student with a personalised mentor that best suits their needs. Our mentors have the expertise to help you find the right strategies to cope with stress and mental health issues, and to help you develop the skills and confidence to successfully manage your studies.
+    <div class="sections">
+        <div class="section" id="home">
+            <div>
+                <h1>
+                    Manatee Mentorates: Where You Find The Mentor For <span style = "text-decoration: underline;">You.</span>
+                </h1>
+                <p>
+                    Manatee Mentorates is a mentoring programme that offers individualised support to university students dealing with stress and mental health issues. Our programme pairs each student with a personalised mentor that best suits their needs. Our mentors have the expertise to help you find the right strategies to cope with stress and mental health issues, and to help you develop the skills and confidence to successfully manage your studies.
 
-                We understand that university life can be overwhelming, and we want to make sure that you have the support you need to make the most of your studies. With Manatee Mentorates, you can look forward to having a mentor who understands your struggles and can help you develop the skills and confidence to overcome them.
+                    We understand that university life can be overwhelming, and we want to make sure that you have the support you need to make the most of your studies. With Manatee Mentorates, you can look forward to having a mentor who understands your struggles and can help you develop the skills and confidence to overcome them.
+                    
+                    Don't let stress and mental health issues stand in the way of your success. Take advantage of the unique support offered by Manatee Mentorates and get the help you need to get the most out of your university experience.        
+                </p>
+            </div>
+            <div>
+                <h2>
+                    How Manatee Mentorates Helped Me
+                </h2>
+                <img src="image_0.png" style="float: left;" alt="person smiling with thumbs up">
+                <p>
+                    I recently had the pleasure of participating in the Manatee Mentorates program, and I must say I was very impressed. Not only did I feel supported and understood, but I also felt like I was getting the best advice possible. The mentors were understanding and patient, and they took the time to understand my individual situation and offered tailored advice. I'm grateful for the knowledge and understanding that I gained from the program, and I'm sure it will help me manage my stress levels and mental health issues in the future. I highly recommend Manatee Mentorates to anyone who's looking for a mentor or guidance on managing their mental health. Thanks for the great experience!
+
+                    -Martin
+                </p>
+            </div>
+            <div>
+                <h2>
+                    From Struggle Comes Success
+                </h2>
+                <img src="image_1.png" style="float: right;" alt="person smiling with thumbs up">
+                <p>
+                    I was feeling overwhelmed and lost before I joined Manatee Mentorates. I was struggling to keep up with my Aerospace Engineering coursework, and I found myself feeling really stressed out and lacking motivation. But then I joined Manatee Mentorates and it completely changed my outlook! My mentor helped me develop better time management skills, so I was able to manage my coursework more efficiently. With their help, I was able to stay on top of my studies and I felt more in control of my academic success. Manatee Mentorates truly saved me from my academic woes, and I'm so glad I found them. I would highly recommend them to anyone who is struggling with their studies!
+
+                    -Felicia
+                </p>
+            </div>
+        </div>
+        <div class="section" id="profile">
+            <!-- TODO: make a user profile here-->
+            <!-- TODO: Maddy-->
+            <div class="section-header">
+                <h1> Johan Anand </h1>
+                <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
+                <span class="review-stars"> ★★★★ </span> 8 students helped
+            </div>
+            <div class="section-about">
+                <h2> About </h2>
+                <img src="image_3.png" style="float:left;">
+                <p>
+    I'm Johan Anand, a physics lecturer and master of fluid dynamics. I have been teaching physics for over 20 years and have a deep understanding of the subject. My research focuses on applying the principles of fluid dynamics to create innovative solutions to energy and environmental challenges.
+    I'm passionate about sharing my knowledge and mentoring students to help them reach their full potential. I believe in being a source of guidance and support, helping them to explore and understand the topic. I'm very patient and have a knack for breaking down complex ideas into understandable concepts.
+    I'm an excellent communicator and have an approachable nature that allows students to feel comfortable asking questions. I'm also an excellent listener, taking time to understand each student's individual learning style and goals.
+    Whether it's helping them understand the basics of physics or helping them develop their problem-solving skills, I'm confident that I can be a great mentor.
+                </p>     
+            </div>
+            <div class="section-availability">
+                <h2> Availability </h2>
+                <table id="availability-table">
+                    <tr>
+                        <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="section-contact">
+                <h2> Contact </h2>
+                <img src="image_4.png" style="float:right;">
+                <p>
+                    <br>
+                    US of A <br>
+                    Address: 123 Dream Street <br>
+                    Zipcode: 12345 <br>
+                    Email: lostsocks@dreamland.com <br>
+                    Tel: (123) 456-7890
+                    <br>
+                </p>
                 
-                Don't let stress and mental health issues stand in the way of your success. Take advantage of the unique support offered by Manatee Mentorates and get the help you need to get the most out of your university experience.        
-            </p>
+            </div>
         </div>
-        <div>
-            <h2>
-                How Manatee Mentorates Helped Me
-            </h2>
-            <img src="image_0.png" style="float: left;" alt="person smiling with thumbs up">
-            <p>
-                I recently had the pleasure of participating in the Manatee Mentorates program, and I must say I was very impressed. Not only did I feel supported and understood, but I also felt like I was getting the best advice possible. The mentors were understanding and patient, and they took the time to understand my individual situation and offered tailored advice. I'm grateful for the knowledge and understanding that I gained from the program, and I'm sure it will help me manage my stress levels and mental health issues in the future. I highly recommend Manatee Mentorates to anyone who's looking for a mentor or guidance on managing their mental health. Thanks for the great experience!
-
-                -Martin
-            </p>
+        <div class="section" id="mentors">
+            <!-- TODO make a searchbox here where you can search for mentors-->
+            <!-- TODO: Ibo -->
+            <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
         </div>
-        <div>
-            <h2>
-                From Struggle Comes Success
-            </h2>
-            <img src="image_1.png" style="float: right;" alt="person smiling with thumbs up">
-            <p>
-                I was feeling overwhelmed and lost before I joined Manatee Mentorates. I was struggling to keep up with my Aerospace Engineering coursework, and I found myself feeling really stressed out and lacking motivation. But then I joined Manatee Mentorates and it completely changed my outlook! My mentor helped me develop better time management skills, so I was able to manage my coursework more efficiently. With their help, I was able to stay on top of my studies and I felt more in control of my academic success. Manatee Mentorates truly saved me from my academic woes, and I'm so glad I found them. I would highly recommend them to anyone who is struggling with their studies!
-
-                -Felicia
-            </p>
-        </div>
-    </div>
-    <div class="section" style="display: none;">
-        <!-- TODO: make a user profile here-->
-        <!-- TODO: Maddy-->
-        <div class="section-header">
-            <h1> Johan Anand </h1>
-            <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
-            <span class="review-stars"> ★★★★ </span> 8 students helped
-        </div>
-        <div class="section-about">
-            <h2> About </h2>
-            <img src="image_3.png" style="float:left;">
-            <p>
-I'm Johan Anand, a physics lecturer and master of fluid dynamics. I have been teaching physics for over 20 years and have a deep understanding of the subject. My research focuses on applying the principles of fluid dynamics to create innovative solutions to energy and environmental challenges.
-I'm passionate about sharing my knowledge and mentoring students to help them reach their full potential. I believe in being a source of guidance and support, helping them to explore and understand the topic. I'm very patient and have a knack for breaking down complex ideas into understandable concepts.
-I'm an excellent communicator and have an approachable nature that allows students to feel comfortable asking questions. I'm also an excellent listener, taking time to understand each student's individual learning style and goals.
-Whether it's helping them understand the basics of physics or helping them develop their problem-solving skills, I'm confident that I can be a great mentor.
-            </p>     
-        </div>
-        <div class="section-availability">
-            <h2> Availability </h2>
-            <table id="availability-table">
-                <tr>
-                    <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
-                </tr>
-            </table>
-        </div>
-        <div class="section-contact">
-            <h2> Contact </h2>
-            <img src="image_4.png" style="float:right;">
-            <p>
-                <br>
-                US of A <br>
-                Address: 123 Dream Street <br>
-                Zipcode: 12345 <br>
-                Email: lostsocks@dreamland.com <br>
-                Tel: (123) 456-7890
-                <br>
-            </p>
-            
-        </div>
-    </div>
-    <div class="section" style="display: none;">
-        <!-- TODO make a searchbox here where you can search for mentors-->
-        <!-- TODO: Ibo -->
-        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
     </div>
     <footer>
         <h1 id="contact-anchor">
