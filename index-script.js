@@ -7,9 +7,15 @@ function showForm(){
 }
 function expandForm(){
     document.getElementsByClassName("registration")[0].style.display = "block";
+    document.getElementById("address-field").required = true;
+    document.getElementById("country-field").required = true;
+    document.getElementById("zipcode-field").required = true;
+    document.getElementById("email-field").required = true;
 }
-function closeForm(){
-    document.getElementById("login-form").style.display = "none";
+function closeForm(ignoreValidation){
+    let el = document.getElementById("login-form");
+    if(!ignoreValidation && !el.checkValidity()) return;
+    el.style.display = "none";
     document.getElementsByClassName("registration")[0].style.display = "none";
 }
 function generateTable(){
