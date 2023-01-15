@@ -261,7 +261,7 @@ form input[type="submit"] {
   text-align: center;
 }
 
-.meeting-confirmation.visible {
+.meeting-request.visible {
   display: block;
 }
 
