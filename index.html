@@ -119,56 +119,89 @@
                 <p>
                     I was feeling overwhelmed and lost before I joined Manatee Mentorates. I was struggling to keep up with my Aerospace Engineering coursework, and I found myself feeling really stressed out and lacking motivation. But then I joined Manatee Mentorates and it completely changed my outlook! My mentor helped me develop better time management skills, so I was able to manage my coursework more efficiently. With their help, I was able to stay on top of my studies and I felt more in control of my academic success. Manatee Mentorates truly saved me from my academic woes, and I'm so glad I found them. I would highly recommend them to anyone who is struggling with their studies!
 
-                    -Felicia
-                </p>
-            </div>
+                -Felicia
+            </p>
         </div>
-        <div class="section" id="profile">
-            <!-- TODO: make a user profile here-->
-            <!-- TODO: Maddy-->
-            <div class="section-header">
-                <h1> Johan Anand </h1>
-                <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
-                <span class="review-stars"> ★★★★ </span> 8 students helped
-            </div>
-            <div class="section-about">
-                <h2> About </h2>
-                <img src="image_3.png" style="float:left;">
-                <p>
-    I'm Johan Anand, a physics lecturer and master of fluid dynamics. I have been teaching physics for over 20 years and have a deep understanding of the subject. My research focuses on applying the principles of fluid dynamics to create innovative solutions to energy and environmental challenges.
-    I'm passionate about sharing my knowledge and mentoring students to help them reach their full potential. I believe in being a source of guidance and support, helping them to explore and understand the topic. I'm very patient and have a knack for breaking down complex ideas into understandable concepts.
-    I'm an excellent communicator and have an approachable nature that allows students to feel comfortable asking questions. I'm also an excellent listener, taking time to understand each student's individual learning style and goals.
-    Whether it's helping them understand the basics of physics or helping them develop their problem-solving skills, I'm confident that I can be a great mentor.
-                </p>     
-            </div>
-            <div class="section-availability">
-                <h2> Availability </h2>
-                <table id="availability-table">
-                    <tr>
-                        <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
-                    </tr>
-                </table>
-            </div>
-            <div class="section-contact">
-                <h2> Contact </h2>
-                <img src="image_4.png" style="float:right;">
-                <p>
-                    <br>
-                    US of A <br>
-                    Address: 123 Dream Street <br>
-                    Zipcode: 12345 <br>
-                    Email: lostsocks@dreamland.com <br>
-                    Tel: (123) 456-7890
-                    <br>
-                </p>
-                
-            </div>
+    </div>
+    <div class="section">
+        <!-- TODO: make a user profile here-->
+        <!-- TODO: Maddy-->
+        <div class="section-header">
+            <h1> Johan Anand </h1>
+            <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
+            <span class="review-stars"> ★★★★ </span> 8 students helped
         </div>
-        <div class="section" id="mentors">
-            <!-- TODO make a searchbox here where you can search for mentors-->
-            <!-- TODO: Ibo -->
-            <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
+        <div class="section-about">
+            <h2> About </h2>
+            <img src="image_3.png" style="float:left;">
+            <p>
+I'm Johan Anand, a physics lecturer and master of fluid dynamics. I have been teaching physics for over 20 years and have a deep understanding of the subject. My research focuses on applying the principles of fluid dynamics to create innovative solutions to energy and environmental challenges.
+I'm passionate about sharing my knowledge and mentoring students to help them reach their full potential. I believe in being a source of guidance and support, helping them to explore and understand the topic. I'm very patient and have a knack for breaking down complex ideas into understandable concepts.
+I'm an excellent communicator and have an approachable nature that allows students to feel comfortable asking questions. I'm also an excellent listener, taking time to understand each student's individual learning style and goals.
+Whether it's helping them understand the basics of physics or helping them develop their problem-solving skills, I'm confident that I can be a great mentor.
+            </p>     
         </div>
+        <div class="section-availability">
+            <h2> Availability </h2>
+            <table id="availability-table">
+                <tr>
+                    <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
+                </tr>
+            </table>
+        </div>
+        <div class="section-contact">
+            <h2> Contact </h2>
+            <img src="image_4.png" style="float:right;">
+            <p>
+                <br>
+                US of A <br>
+                Address: 123 Dream Street <br>
+                Zipcode: 12345 <br>
+                Email: lostsocks@dreamland.com <br>
+                Tel: (123) 456-7890
+                <br>
+            </p>
+            
+        </div>
+    </div>
+    <div class="section">
+        <!-- TODO make a searchbox here where you can search for mentors-->
+        <!-- TODO: Ibo -->
+        <div class="searchbox">
+            <form>
+              <label for="skills">Skills:</label>
+              <input type="text" id="skills" name="skills">
+            
+              <label for="jobcat">Job Category:</label>
+              <select id="jobcat" name="jobcat">
+                <option value="">Select A category</option>
+                <option value="accounting and finance">Accounting and finance</option>
+                <option value="banking">Banking</option>
+                <option value="business and management">Business and Management</option>
+                <option value="computing and IT">Computing and IT</option>  
+                <option value="consultancy">Consultancy</option> 
+                <option value="education">Education</option> 
+                <option value="healthcare & medicine">Healthcare & Medicine</option> 
+                <option value="legal">Legal</option> 
+                <option value="marketing and pr">Marketing and PR</option>
+                <option value="science and research">Science and Research</option> 
+                  
+              </select>
+            
+              <label for="company">Company:</label>
+              <input type="text" id="company" name="company">
+            
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location">
+            
+              <label for="review">Review:</label>
+              <input type="number" id="review" name="review" min="0" max="5">
+            
+              <input type="submit" value="Search">
+            </form>
+          </div>
+          
+        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
     </div>
     <footer>
         <h1 id="contact-anchor">
