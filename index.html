@@ -563,7 +563,7 @@ Whether it's helping them understand the basics of physics or helping them devel
         </div>
         <div class="section" id="mentors">
         <!-- TODO make a searchbox here where you can search for mentors-->
-        <!-- TODO: Ibo -->
+        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
         <h2> Search for a mentor that suits you! </h2>
             <div class="searchbox">
                 <form id="search-form">
@@ -614,15 +614,17 @@ Whether it's helping them understand the basics of physics or helping them devel
                   <label for="date">Available Dates:</label>
                   <input type="date" id="availability-table" name="date">
               
-                  <input type="submit" value="Send Request">
+                  <button onclick="myFunction()">Send Request</button>
+                  <p id="demo"></p>
+                    <script>
+                    function myFunction() {
+                    document.getElementById("demo").innerHTML = "Your meeting request has been Submitted. it has to be Approved by The Mento";
+                        }
+                    </script>
                 </form>
               </div>
               
-              <div class="confirm-meeting">
-                <h2>Meeting Approval</h2>
-                <p>Your meeting request has been Submitted. it has to be Approved by The Mentor.</p>
-              </div>                        
-        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
+                                    
         </div>
     </div>
 
