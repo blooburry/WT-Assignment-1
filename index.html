@@ -592,8 +592,10 @@ Whether it's helping them understand the basics of physics or helping them devel
                     <label for="location">Location:</label>
                     <input type="text" id="location" name="location" placeholder="e.g.Roterrdam">
                     
-                    <label for="review">Review:</label>
-                    <input type="number" class="review-stars" name="review" min="0" max="5">
+                    <label class="rating-label"><strong>Reviews  </strong>
+                    <input class="rating" max="5" oninput="this.style.setProperty('--value', `${this.valueAsNumber}`)"
+                    step="0.5" style="--value:2.5" type="range" value="2.5"> </label>
+  
                     
                     <input type="submit" value="Search">
                 </form>
@@ -621,7 +623,7 @@ Whether it's helping them understand the basics of physics or helping them devel
                   <p id="demo"></p>
                     <script>
                     function myFunction() {
-                    document.getElementById("demo").innerHTML = "Your meeting request has been Submitted. it has to be Approved by The Mento";
+                    document.getElementById("demo").innerHTML = "Your meeting request has been Submitted. it has to be Approved by The Mentos";
                         }
                     </script>
                 </form>
