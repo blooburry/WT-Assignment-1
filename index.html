@@ -563,12 +563,12 @@ Whether it's helping them understand the basics of physics or helping them devel
         </div>
         <div class="section" id="mentors">
         <!-- TODO make a searchbox here where you can search for mentors-->
-        <!-- TODO: Ibo -->
+        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
         <h2> Search for a mentor that suits you! </h2>
             <div class="searchbox">
                 <form id="search-form">
                     <label for="skills">Skills:</label>
-                    <input type="text" id="skills" name="skills">
+                    <input type="text" id="skills" name="skills" placeholder="e.g.Coaching - Problem solving ">
                     
                     <label for="jobcat">Job Category:</label>
                     <select id="jobcat" name="jobcat">
@@ -587,10 +587,10 @@ Whether it's helping them understand the basics of physics or helping them devel
                     </select>
                     
                     <label for="company">Company:</label>
-                    <input type="text" id="company" name="company">
+                    <input type="text" id="company" name="company" placeholder="e.g.Advent Corporation">
                     
                     <label for="location">Location:</label>
-                    <input type="text" id="location" name="location">
+                    <input type="text" id="location" name="location" placeholder="e.g.Roterrdam">
                     
                     <label for="review">Review:</label>
                     <input type="number" class="review-stars" name="review" min="0" max="5">
@@ -605,24 +605,29 @@ Whether it's helping them understand the basics of physics or helping them devel
                   <select id="mentor" name="mentor">
                     <option value="">Select a mentor</option>
                     <option id ="profile" value="Johan Anand">Johan Anand</option>
-                    
+                    <option id ="profile" value="Bill Bowerman">Bill Bowerman</option>
+                    <option id ="profile" value="Lenny Wilkens">Lenny Wilkens</option>
+                    <option id ="profile" value="Geno Auriemma">Geno Auriemma</option>
+                      
                   </select>
               
                   <label for="prps">The purpose of this meeting is :</label>
-                  <textarea id="prps" name="prps"></textarea>
+                  <textarea id="prps" name="prps" ></textarea>
               
                   <label for="date">Available Dates:</label>
-                  <input type="date" id="availability-table" name="date">
+                  <input type="date" id="availability-table" name="date"> <br>
               
-                  <input type="submit" value="Send Request">
+                  <button onclick="myFunction()">Send Request</button>
+                  <p id="demo"></p>
+                    <script>
+                    function myFunction() {
+                    document.getElementById("demo").innerHTML = "Your meeting request has been Submitted. it has to be Approved by The Mento";
+                        }
+                    </script>
                 </form>
               </div>
               
-              <div class="confirm-meeting">
-                <h2>Meeting Approval</h2>
-                <p>Your meeting request has been Submitted. it has to be Approved by The Mentor.</p>
-              </div>                        
-        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
+                                    
         </div>
     </div>
 
