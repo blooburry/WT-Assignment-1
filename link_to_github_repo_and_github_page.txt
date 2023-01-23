@@ -1,5 +1,0 @@
-repo:
-https://github.com/blooburry/WT-Assignment-1
-
-site:
-https://blooburry.github.io/WT-Assignment-1/
