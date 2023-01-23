@@ -4,6 +4,8 @@ function dynamicallyCreatedHTML(){
 
 function showForm(){
     document.getElementById("login-form").style.display = "flex";
+
+    startTimer();
 }
 function expandForm(){
     document.getElementsByClassName("registration")[0].style.display = "block";
@@ -17,6 +19,8 @@ function closeForm(ignoreValidation){
     if(!ignoreValidation && !el.checkValidity()) return;
     el.style.display = "none";
     document.getElementsByClassName("registration")[0].style.display = "none";
+
+    endTimer();
 }
 function generateTable(){
     let el = document.getElementById("availability-table").childNodes[1];

@@ -6,14 +6,21 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="index-style.css">
     <script src="index-script.js"></script>
+    <script src="tracking.js" defer></script>
 </head>
 <body onload="dynamicallyCreatedHTML()">
     <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
     <form id="login-form">
+      <div style="display:none;">
+        Number of mouse clicks: <span id="number-of-clicks"></span>
+        Total time spent: <span id="total-time-spent"></span> milliseconds <br>
+        Key presses per field: <span id="keypresses-per-field"></span>
+        Characters typed per field: <span id="chars-per-field"></span>
+      </div>
         <span id="close" onclick="closeForm(true)" style="position: absolute; right: 15px; top: 10px;">Ⓧ</span>
         <div class="login">
             <h1> Log In </h1>
-            <label class="name" for="name-field">
+            <label class="name" for="username-field">
             Username:
             <input id="username-field" placeholder="e.g. John Doe" required/><br>
             </label>
