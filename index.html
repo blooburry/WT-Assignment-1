@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index-style.css">
     <script src="index-script.js"></script>
     <script src="tracking.js" defer></script>
+    <script src="form_validation.js" defer> </script>
 </head>
 <body onload="dynamicallyCreatedHTML()">
     <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
@@ -359,7 +360,7 @@
             <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{4}[A-Za-z]{2}" title="It must be four numbers and two letters" placeholder="eg .1234 Ab ">
             <label class="email" for="email" required>
               Email:
-              <input id="email-field" type="email" placeholder="john.doe@gmail.com"/>
+              <input id="email-field" type="email" placeholder="john.doe@gmail.com" required/>
           </label><br>
               <label for="sex">Sex:</label>
               <select id="sex" name="sex" required>
