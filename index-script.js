@@ -9,10 +9,7 @@ function showForm(){
 }
 function expandForm(){
     document.getElementsByClassName("registration")[0].style.display = "block";
-    document.getElementById("address").required = true;
-    document.getElementById("country").required = true;
-    document.getElementById("zipcode").required = true;
-    document.getElementById("email").required = true;
+  
 }
 function closeForm(ignoreValidation){
     let el = document.getElementById("login-form");
