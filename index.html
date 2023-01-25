@@ -22,26 +22,39 @@
             <h1> Log In </h1>
             <label class="name" for="username-field">
             Username:
-            <input id="username-field" placeholder="e.g. John Doe" required/><br>
+            <input id="username-field" placeholder="e.g. John Doe" /><br>
             </label>
             <label class="password" for="password-field">
                 Password:
-                <input id="password-field" required/>
+                <input id="password-field" />
             </label>
+          </div>
         </div>
         <p onclick="expandForm()">
-            Not yet a user? <span style="color: rgb(30, 166, 166);"> Sign up! </span>
+            Not yet a user? <span style="color: rgb(30, 166, 166);" width="600" height ="1200"> Sign up! </span>
         </p>
-        <div class="registration">
+        <div class="registration" >
             <h1> Register </h1>
-            <label class="address" for="address-field">
-                Address:
-                <input id="address-field" placeholder="e.g. Goetia Manor, 77"/>
-            </label><br>
-            <label class="country" for="country-field">
+            
+              <label for="userID">User ID:</label>
+              <input type="text" id="userID" name="userID" required pattern="[A-Z][a-zA-Z0-9]{4,11}[0-9|!@#\$%\^&\*]" title="Must start with a capital letter, 
+              be between 5 and 12 characters long, and end with a number or special character." placeholder="eg .Abcd234">
+              
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=^.{12,}$).*" title="Must be at least 12 characters long, 
+              contain a combination of uppercase letters, lowercase letters, numbers, and symbols, and cannot be a word that can be the name of a person.">
+              
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required pattern="[a-zA-Z]+" title="Must contain the Alphabet only.">
+              
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address">
+
+              <label class="country" for="country-field">
                 Country:
-                <select class="form-select" id="country-field">
-              <option value="Afghanistan">Afghanistan</option>
+                <select class="form-select" id="country-field" required>
+                  <option selected="">Selec A country</option> 
+                  <option value="Afghanistan">Afghanistan</option>
               <option value="Åland Islands">Åland Islands</option>
               <option value="Albania">Albania</option>
               <option value="Algeria">Algeria</option>
@@ -225,7 +238,7 @@
               <option value="Namibia">Namibia</option>
               <option value="Nauru">Nauru</option>
               <option value="Nepal">Nepal</option>
-              <option selected="" value="Netherlands">Netherlands</option>
+              <option value="Netherlands">Netherlands</option>
               <option value="Netherlands Antilles">Netherlands Antilles</option>
               <option value="New Caledonia">New Caledonia</option>
               <option value="New Zealand">New Zealand</option>
@@ -341,26 +354,27 @@
               <option value="Zimbabwe">Zimbabwe</option>
                 </select>
             </label><br>
-            <label class="zipcode" for="zipcode-field">
-                Zipcode:
-                <input id="zipcode-field" placeholder="e.g. 1234AB"/>
-            </label><br>
-            <label class="email" for="email-field">
-                Email:
-                <input id="email-field" type="email" placeholder="john.doe@gmail.com"/>
-            </label><br>
-            <label class="sex" for="sex-field">
-                Sex(optional):
-                <select class="form-select" id="sex-field">
-                    <option> Yes </option>
-                    <option> No </option>
-                </select>
-            </label><br>
-            </label>
-            <label class="language" for="language-field">
+
+            <label for="zipcode">ZIP code:</label>
+            <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{4}[A-Za-z]{2}" title="It must be four numbers and two letters" placeholder="eg .1234 Ab ">
+            <label class="email" for="email" required>
+              Email:
+              <input id="email-field" type="email" placeholder="john.doe@gmail.com"/>
+          </label><br>
+              <label for="sex">Sex:</label>
+              <select id="sex" name="sex" required>
+                <option value=""></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              
+              
+              <label class="language" for="language">
                 Language(optional):
-                <select class="form-select" id="language-field">
-                    <option>Afrikaans</option>
+                <select class="form-select" id="language" required>
+                  <option selected="">Selec A language</option>  
+                  <option>Afrikaans</option>
                     <option>Albanian</option>
                     <option>Amharic</option>
                     <option>Arabic</option>
@@ -379,7 +393,7 @@
                     <option>Croatian</option>
                     <option>Czech</option>
                     <option>Danish</option>
-                    <option selected="">Dutch</option>
+                    <option >Dutch</option>
                     <option>English</option>
                     <option>Esperanto</option>
                     <option>Estonian</option>
@@ -459,11 +473,10 @@
                     <option>Zulu</option>
                 </select>
             </label><br>
-            <label class="bio" for="bio-field">
-                Bio (optional):
-                <textarea id="bio-field"></textarea>
-            </label><br>
-            <span style="font-family:'Courier New', Courier, monospace; font-size: 16px;">User id: 123456789AB</span>
+            <label for="bio">Bio (optional):</label>
+            <textarea id="bio" name="bio"></textarea>
+
+            <span style="font-family:'Courier New', Courier, monospace; font-size: 16px;">  </span>
         </div>
         <button onclick="closeForm(false)" type="submit">
           Submit
