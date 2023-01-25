@@ -66,7 +66,7 @@ function showForm(){
 }
 function expandForm(){
     document.getElementsByClassName("registration")[0].style.display = "block";
-    
+
 }
 function closeForm(ignoreValidation){
     let el = document.getElementById("login-form");
