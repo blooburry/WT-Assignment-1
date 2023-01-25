@@ -1,668 +1,666 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manatee Mentorates</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="index-style.css">
-    <script src="index-script.js"></script>
-    <script src="tracking.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manatee Mentorates</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="index-style.css">
+  <script src="index-script.js"></script>
+  <script src="tracking.js" defer></script>
 </head>
 <body onload="dynamicallyCreatedHTML()">
-    <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
-    <form id="login-form">
-      <div style="display:none;">
-        Number of mouse clicks: <span id="number-of-clicks"></span>
-        Total time spent: <span id="total-time-spent"></span> milliseconds <br>
-        Key presses per field: <span id="keypresses-per-field"></span>
-        Characters typed per field: <span id="chars-per-field"></span>
+  <!-- user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio. -->
+  <form id="login-form">
+    <div style="display:none;">
+      Number of mouse clicks: <span id="number-of-clicks"></span>
+      Total time spent: <span id="total-time-spent"></span> milliseconds <br>
+      Key presses per field: <span id="keypresses-per-field"></span>
+      Characters typed per field: <span id="chars-per-field"></span>
+    </div>
+      <span id="close" onclick="closeForm(true)" style="position: absolute; right: 15px; top: 10px;">Ⓧ</span>
+      <div class="login">
+          <h1> Log In </h1>
+          <label class="name" for="username-field">
+          Username:
+          <input id="username-field" placeholder="e.g. John Doe" /><br>
+          </label>
+          <label class="password" for="password-field">
+              Password:
+              <input id="password-field" />
+          </label>
+        </div>
       </div>
-        <span id="close" onclick="closeForm(true)" style="position: absolute; right: 15px; top: 10px;">Ⓧ</span>
-        <div class="login">
-            <h1> Log In </h1>
-            <label class="name" for="username-field">
-            Username:
-            <input id="username-field" placeholder="e.g. John Doe" /><br>
-            </label>
-            <label class="password" for="password-field">
-                Password:
-                <input id="password-field" />
-            </label>
-          </div>
-        </div>
-        <p onclick="expandForm()">
-            Not yet a user? <span style="color: rgb(30, 166, 166);" width="600" height ="1200"> Sign up! </span>
-        </p>
-        <div class="registration" >
-            <h1> Register </h1>
+      <p onclick="expandForm()">
+          Not yet a user? <span style="color: rgb(30, 166, 166);" width="600" height ="1200"> Sign up! </span>
+      </p>
+      <div class="registration" onsubmit="return validateForm()">
+          <h1> Register </h1>
+          
+            <label for="userID">User ID:</label>
+            <input type="text" id="userID" name="userID" required>
             
-              <label for="userID">User ID:</label>
-              <input type="text" id="userID" name="userID" required pattern="[A-Z][a-zA-Z0-9]{4,11}[0-9|!@#\$%\^&\*]" title="Must start with a capital letter, 
-              be between 5 and 12 characters long, and end with a number or special character." placeholder="eg .Abcd234">
-              
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=^.{12,}$).*" title="Must be at least 12 characters long, 
-              contain a combination of uppercase letters, lowercase letters, numbers, and symbols, and cannot be a word that can be the name of a person.">
-              
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required pattern="[a-zA-Z]+" title="Must contain the Alphabet only.">
-              
-              <label for="address">Address:</label>
-              <input type="text" id="address" name="address">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
 
-              <label class="country" for="country-field">
-                Country:
-                <select class="form-select" id="country-field" required>
-                  <option value="">Selec A country</option> 
-                  <option value="Afghanistan">Afghanistan</option>
-              <option value="Åland Islands">Åland Islands</option>
-              <option value="Albania">Albania</option>
-              <option value="Algeria">Algeria</option>
-              <option value="American Samoa">American Samoa</option>
-              <option value="Andorra">Andorra</option>
-              <option value="Angola">Angola</option>
-              <option value="Anguilla">Anguilla</option>
-              <option value="Antarctica">Antarctica</option>
-              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-              <option value="Argentina">Argentina</option>
-              <option value="Armenia">Armenia</option>
-              <option value="Aruba">Aruba</option>
-              <option value="Australia">Australia</option>
-              <option value="Austria">Austria</option>
-              <option value="Azerbaijan">Azerbaijan</option>
-              <option value="Bahamas">Bahamas</option>
-              <option value="Bahrain">Bahrain</option>
-              <option value="Bangladesh">Bangladesh</option>
-              <option value="Barbados">Barbados</option>
-              <option value="Belarus">Belarus</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Belize">Belize</option>
-              <option value="Benin">Benin</option>
-              <option value="Bermuda">Bermuda</option>
-              <option value="Bhutan">Bhutan</option>
-              <option value="Bolivia">Bolivia</option>
-              <option value="Bosnia and Herzegovina">
-                Bosnia and Herzegovina
-              </option>
-              <option value="Botswana">Botswana</option>
-              <option value="Bouvet Island">Bouvet Island</option>
-              <option value="Brazil">Brazil</option>
-              <option value="British Indian Ocean Territory">
-                British Indian Ocean Territory
-              </option>
-              <option value="Brunei Darussalam">Brunei Darussalam</option>
-              <option value="Bulgaria">Bulgaria</option>
-              <option value="Burkina Faso">Burkina Faso</option>
-              <option value="Burundi">Burundi</option>
-              <option value="Cambodia">Cambodia</option>
-              <option value="Cameroon">Cameroon</option>
-              <option value="Canada">Canada</option>
-              <option value="Cape Verde">Cape Verde</option>
-              <option value="Cayman Islands">Cayman Islands</option>
-              <option value="Central African Republic">
-                Central African Republic
-              </option>
-              <option value="Chad">Chad</option>
-              <option value="Chile">Chile</option>
-              <option value="China">China</option>
-              <option value="Christmas Island">Christmas Island</option>
-              <option value="Cocos (Keeling) Islands">
-                Cocos (Keeling) Islands
-              </option>
-              <option value="Colombia">Colombia</option>
-              <option value="Comoros">Comoros</option>
-              <option value="Congo">Congo</option>
-              <option value="Congo, The Democratic Republic of The">
-                Congo, The Democratic Republic of The
-              </option>
-              <option value="Cook Islands">Cook Islands</option>
-              <option value="Costa Rica">Costa Rica</option>
-              <option value="Cote D'ivoire">Cote D'ivoire</option>
-              <option value="Croatia">Croatia</option>
-              <option value="Cuba">Cuba</option>
-              <option value="Cyprus">Cyprus</option>
-              <option value="Czech Republic">Czech Republic</option>
-              <option value="Denmark">Denmark</option>
-              <option value="Djibouti">Djibouti</option>
-              <option value="Dominica">Dominica</option>
-              <option value="Dominican Republic">Dominican Republic</option>
-              <option value="Ecuador">Ecuador</option>
-              <option value="Egypt">Egypt</option>
-              <option value="El Salvador">El Salvador</option>
-              <option value="Equatorial Guinea">Equatorial Guinea</option>
-              <option value="Eritrea">Eritrea</option>
-              <option value="Estonia">Estonia</option>
-              <option value="Ethiopia">Ethiopia</option>
-              <option value="Falkland Islands (Malvinas)">
-                Falkland Islands (Malvinas)
-              </option>
-              <option value="Faroe Islands">Faroe Islands</option>
-              <option value="Fiji">Fiji</option>
-              <option value="Finland">Finland</option>
-              <option value="France">France</option>
-              <option value="French Guiana">French Guiana</option>
-              <option value="French Polynesia">French Polynesia</option>
-              <option value="French Southern Territories">
-                French Southern Territories
-              </option>
-              <option value="Gabon">Gabon</option>
-              <option value="Gambia">Gambia</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Germany">Germany</option>
-              <option value="Ghana">Ghana</option>
-              <option value="Gibraltar">Gibraltar</option>
-              <option value="Greece">Greece</option>
-              <option value="Greenland">Greenland</option>
-              <option value="Grenada">Grenada</option>
-              <option value="Guadeloupe">Guadeloupe</option>
-              <option value="Guam">Guam</option>
-              <option value="Guatemala">Guatemala</option>
-              <option value="Guernsey">Guernsey</option>
-              <option value="Guinea">Guinea</option>
-              <option value="Guinea-bissau">Guinea-bissau</option>
-              <option value="Guyana">Guyana</option>
-              <option value="Haiti">Haiti</option>
-              <option value="Heard Island and Mcdonald Islands">
-                Heard Island and Mcdonald Islands
-              </option>
-              <option value="Holy See (Vatican City State)">
-                Holy See (Vatican City State)
-              </option>
-              <option value="Honduras">Honduras</option>
-              <option value="Hong Kong">Hong Kong</option>
-              <option value="Hungary">Hungary</option>
-              <option value="Iceland">Iceland</option>
-              <option value="India">India</option>
-              <option value="Indonesia">Indonesia</option>
-              <option value="Iran, Islamic Republic of">
-                Iran, Islamic Republic of
-              </option>
-              <option value="Iraq">Iraq</option>
-              <option value="Ireland">Ireland</option>
-              <option value="Isle of Man">Isle of Man</option>
-              <option value="Israel">Israel</option>
-              <option value="Italy">Italy</option>
-              <option value="Jamaica">Jamaica</option>
-              <option value="Japan">Japan</option>
-              <option value="Jersey">Jersey</option>
-              <option value="Jordan">Jordan</option>
-              <option value="Kazakhstan">Kazakhstan</option>
-              <option value="Kenya">Kenya</option>
-              <option value="Kiribati">Kiribati</option>
-              <option value="Korea, Democratic People's Republic of">
-                Korea, Democratic People's Republic of
-              </option>
-              <option value="Korea, Republic of">Korea, Republic of</option>
-              <option value="Kuwait">Kuwait</option>
-              <option value="Kyrgyzstan">Kyrgyzstan</option>
-              <option value="Lao People's Democratic Republic">
-                Lao People's Democratic Republic
-              </option>
-              <option value="Latvia">Latvia</option>
-              <option value="Lebanon">Lebanon</option>
-              <option value="Lesotho">Lesotho</option>
-              <option value="Liberia">Liberia</option>
-              <option value="Libyan Arab Jamahiriya">
-                Libyan Arab Jamahiriya
-              </option>
-              <option value="Liechtenstein">Liechtenstein</option>
-              <option value="Lithuania">Lithuania</option>
-              <option value="Luxembourg">Luxembourg</option>
-              <option value="Macao">Macao</option>
-              <option value="Macedonia, The Former Yugoslav Republic of">
-                Macedonia, The Former Yugoslav Republic of
-              </option>
-              <option value="Madagascar">Madagascar</option>
-              <option value="Malawi">Malawi</option>
-              <option value="Malaysia">Malaysia</option>
-              <option value="Maldives">Maldives</option>
-              <option value="Mali">Mali</option>
-              <option value="Malta">Malta</option>
-              <option value="Marshall Islands">Marshall Islands</option>
-              <option value="Martinique">Martinique</option>
-              <option value="Mauritania">Mauritania</option>
-              <option value="Mauritius">Mauritius</option>
-              <option value="Mayotte">Mayotte</option>
-              <option value="Mexico">Mexico</option>
-              <option value="Micronesia, Federated States of">
-                Micronesia, Federated States of
-              </option>
-              <option value="Moldova, Republic of">Moldova, Republic of</option>
-              <option value="Monaco">Monaco</option>
-              <option value="Mongolia">Mongolia</option>
-              <option value="Montenegro">Montenegro</option>
-              <option value="Montserrat">Montserrat</option>
-              <option value="Morocco">Morocco</option>
-              <option value="Mozambique">Mozambique</option>
-              <option value="Myanmar">Myanmar</option>
-              <option value="Namibia">Namibia</option>
-              <option value="Nauru">Nauru</option>
-              <option value="Nepal">Nepal</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="Netherlands Antilles">Netherlands Antilles</option>
-              <option value="New Caledonia">New Caledonia</option>
-              <option value="New Zealand">New Zealand</option>
-              <option value="Nicaragua">Nicaragua</option>
-              <option value="Niger">Niger</option>
-              <option value="Nigeria">Nigeria</option>
-              <option value="Niue">Niue</option>
-              <option value="Norfolk Island">Norfolk Island</option>
-              <option value="Northern Mariana Islands">
-                Northern Mariana Islands
-              </option>
-              <option value="Norway">Norway</option>
-              <option value="Oman">Oman</option>
-              <option value="Pakistan">Pakistan</option>
-              <option value="Palau">Palau</option>
-              <option value="Palestinian Territory, Occupied">
-                Palestinian Territory, Occupied
-              </option>
-              <option value="Panama">Panama</option>
-              <option value="Papua New Guinea">Papua New Guinea</option>
-              <option value="Paraguay">Paraguay</option>
-              <option value="Peru">Peru</option>
-              <option value="Philippines">Philippines</option>
-              <option value="Pitcairn">Pitcairn</option>
-              <option value="Poland">Poland</option>
-              <option value="Portugal">Portugal</option>
-              <option value="Puerto Rico">Puerto Rico</option>
-              <option value="Qatar">Qatar</option>
-              <option value="Reunion">Reunion</option>
-              <option value="Romania">Romania</option>
-              <option value="Russian Federation">Russian Federation</option>
-              <option value="Rwanda">Rwanda</option>
-              <option value="Saint Helena">Saint Helena</option>
-              <option value="Saint Kitts and Nevis">
-                Saint Kitts and Nevis
-              </option>
-              <option value="Saint Lucia">Saint Lucia</option>
-              <option value="Saint Pierre and Miquelon">
-                Saint Pierre and Miquelon
-              </option>
-              <option value="Saint Vincent and The Grenadines">
-                Saint Vincent and The Grenadines
-              </option>
-              <option value="Samoa">Samoa</option>
-              <option value="San Marino">San Marino</option>
-              <option value="Sao Tome and Principe">
-                Sao Tome and Principe
-              </option>
-              <option value="Saudi Arabia">Saudi Arabia</option>
-              <option value="Senegal">Senegal</option>
-              <option value="Serbia">Serbia</option>
-              <option value="Seychelles">Seychelles</option>
-              <option value="Sierra Leone">Sierra Leone</option>
-              <option value="Singapore">Singapore</option>
-              <option value="Slovakia">Slovakia</option>
-              <option value="Slovenia">Slovenia</option>
-              <option value="Solomon Islands">Solomon Islands</option>
-              <option value="Somalia">Somalia</option>
-              <option value="South Africa">South Africa</option>
-              <option value="South Georgia and The South Sandwich Islands">
-                South Georgia and The South Sandwich Islands
-              </option>
-              <option value="Spain">Spain</option>
-              <option value="Sri Lanka">Sri Lanka</option>
-              <option value="Sudan">Sudan</option>
-              <option value="Suriname">Suriname</option>
-              <option value="Svalbard and Jan Mayen">
-                Svalbard and Jan Mayen
-              </option>
-              <option value="Swaziland">Swaziland</option>
-              <option value="Sweden">Sweden</option>
-              <option value="Switzerland">Switzerland</option>
-              <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-              <option value="Taiwan">Taiwan</option>
-              <option value="Tajikistan">Tajikistan</option>
-              <option value="Tanzania, United Republic of">
-                Tanzania, United Republic of
-              </option>
-              <option value="Thailand">Thailand</option>
-              <option value="Timor-leste">Timor-leste</option>
-              <option value="Togo">Togo</option>
-              <option value="Tokelau">Tokelau</option>
-              <option value="Tonga">Tonga</option>
-              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-              <option value="Tunisia">Tunisia</option>
-              <option value="Turkey">Turkey</option>
-              <option value="Turkmenistan">Turkmenistan</option>
-              <option value="Turks and Caicos Islands">
-                Turks and Caicos Islands
-              </option>
-              <option value="Tuvalu">Tuvalu</option>
-              <option value="Uganda">Uganda</option>
-              <option value="Ukraine">Ukraine</option>
-              <option value="United Arab Emirates">United Arab Emirates</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="United States">United States</option>
-              <option value="United States Minor Outlying Islands">
-                United States Minor Outlying Islands
-              </option>
-              <option value="Uruguay">Uruguay</option>
-              <option value="Uzbekistan">Uzbekistan</option>
-              <option value="Vanuatu">Vanuatu</option>
-              <option value="Venezuela">Venezuela</option>
-              <option value="Viet Nam">Viet Nam</option>
-              <option value="Virgin Islands, British">
-                Virgin Islands, British
-              </option>
-              <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-              <option value="Wallis and Futuna">Wallis and Futuna</option>
-              <option value="Western Sahara">Western Sahara</option>
-              <option value="Yemen">Yemen</option>
-              <option value="Zambia">Zambia</option>
-              <option value="Zimbabwe">Zimbabwe</option>
-                </select>
-            </label><br>
-
-            <label for="zipcode">ZIP code:</label>
-            <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{4}[A-Za-z]{2}" title="It must be four numbers and two letters" placeholder="eg .1234 Ab ">
-            <label class="email" for="email" required>
-              Email:
-              <input id="email-field" type="email" placeholder="john.doe@gmail.com"/>
-          </label><br>
-              <label for="sex">Sex:</label>
-              <select id="sex" name="sex" required>
-                <option value="">None</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+            <label class="country" for="country">
+              Country:
+              <select class="form-select" id="country" required>
+                <option value="">Selec A country</option> 
+                <option value="Afghanistan">Afghanistan</option>
+            <option value="Åland Islands">Åland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Anguilla">Anguilla</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Aruba">Aruba</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Bahamas">Bahamas</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Barbados">Barbados</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Belize">Belize</option>
+            <option value="Benin">Benin</option>
+            <option value="Bermuda">Bermuda</option>
+            <option value="Bhutan">Bhutan</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Bosnia and Herzegovina">
+              Bosnia and Herzegovina
+            </option>
+            <option value="Botswana">Botswana</option>
+            <option value="Bouvet Island">Bouvet Island</option>
+            <option value="Brazil">Brazil</option>
+            <option value="British Indian Ocean Territory">
+              British Indian Ocean Territory
+            </option>
+            <option value="Brunei Darussalam">Brunei Darussalam</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Canada">Canada</option>
+            <option value="Cape Verde">Cape Verde</option>
+            <option value="Cayman Islands">Cayman Islands</option>
+            <option value="Central African Republic">
+              Central African Republic
+            </option>
+            <option value="Chad">Chad</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Christmas Island">Christmas Island</option>
+            <option value="Cocos (Keeling) Islands">
+              Cocos (Keeling) Islands
+            </option>
+            <option value="Colombia">Colombia</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Congo">Congo</option>
+            <option value="Congo, The Democratic Republic of The">
+              Congo, The Democratic Republic of The
+            </option>
+            <option value="Cook Islands">Cook Islands</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Cote D'ivoire">Cote D'ivoire</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Cyprus">Cyprus</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Dominica">Dominica</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Falkland Islands (Malvinas)">
+              Falkland Islands (Malvinas)
+            </option>
+            <option value="Faroe Islands">Faroe Islands</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="French Guiana">French Guiana</option>
+            <option value="French Polynesia">French Polynesia</option>
+            <option value="French Southern Territories">
+              French Southern Territories
+            </option>
+            <option value="Gabon">Gabon</option>
+            <option value="Gambia">Gambia</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Gibraltar">Gibraltar</option>
+            <option value="Greece">Greece</option>
+            <option value="Greenland">Greenland</option>
+            <option value="Grenada">Grenada</option>
+            <option value="Guadeloupe">Guadeloupe</option>
+            <option value="Guam">Guam</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guernsey">Guernsey</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guinea-bissau">Guinea-bissau</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Heard Island and Mcdonald Islands">
+              Heard Island and Mcdonald Islands
+            </option>
+            <option value="Holy See (Vatican City State)">
+              Holy See (Vatican City State)
+            </option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Hungary">Hungary</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Iran, Islamic Republic of">
+              Iran, Islamic Republic of
+            </option>
+            <option value="Iraq">Iraq</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Isle of Man">Isle of Man</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Jersey">Jersey</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Kiribati">Kiribati</option>
+            <option value="Korea, Democratic People's Republic of">
+              Korea, Democratic People's Republic of
+            </option>
+            <option value="Korea, Republic of">Korea, Republic of</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="Lao People's Democratic Republic">
+              Lao People's Democratic Republic
+            </option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Liberia">Liberia</option>
+            <option value="Libyan Arab Jamahiriya">
+              Libyan Arab Jamahiriya
+            </option>
+            <option value="Liechtenstein">Liechtenstein</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Macao">Macao</option>
+            <option value="Macedonia, The Former Yugoslav Republic of">
+              Macedonia, The Former Yugoslav Republic of
+            </option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Mali">Mali</option>
+            <option value="Malta">Malta</option>
+            <option value="Marshall Islands">Marshall Islands</option>
+            <option value="Martinique">Martinique</option>
+            <option value="Mauritania">Mauritania</option>
+            <option value="Mauritius">Mauritius</option>
+            <option value="Mayotte">Mayotte</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Micronesia, Federated States of">
+              Micronesia, Federated States of
+            </option>
+            <option value="Moldova, Republic of">Moldova, Republic of</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Mongolia">Mongolia</option>
+            <option value="Montenegro">Montenegro</option>
+            <option value="Montserrat">Montserrat</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Namibia">Namibia</option>
+            <option value="Nauru">Nauru</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Netherlands Antilles">Netherlands Antilles</option>
+            <option value="New Caledonia">New Caledonia</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Niger">Niger</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Niue">Niue</option>
+            <option value="Norfolk Island">Norfolk Island</option>
+            <option value="Northern Mariana Islands">
+              Northern Mariana Islands
+            </option>
+            <option value="Norway">Norway</option>
+            <option value="Oman">Oman</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Palau">Palau</option>
+            <option value="Palestinian Territory, Occupied">
+              Palestinian Territory, Occupied
+            </option>
+            <option value="Panama">Panama</option>
+            <option value="Papua New Guinea">Papua New Guinea</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Pitcairn">Pitcairn</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Reunion">Reunion</option>
+            <option value="Romania">Romania</option>
+            <option value="Russian Federation">Russian Federation</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Saint Helena">Saint Helena</option>
+            <option value="Saint Kitts and Nevis">
+              Saint Kitts and Nevis
+            </option>
+            <option value="Saint Lucia">Saint Lucia</option>
+            <option value="Saint Pierre and Miquelon">
+              Saint Pierre and Miquelon
+            </option>
+            <option value="Saint Vincent and The Grenadines">
+              Saint Vincent and The Grenadines
+            </option>
+            <option value="Samoa">Samoa</option>
+            <option value="San Marino">San Marino</option>
+            <option value="Sao Tome and Principe">
+              Sao Tome and Principe
+            </option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Serbia">Serbia</option>
+            <option value="Seychelles">Seychelles</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Solomon Islands">Solomon Islands</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Georgia and The South Sandwich Islands">
+              South Georgia and The South Sandwich Islands
+            </option>
+            <option value="Spain">Spain</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Suriname">Suriname</option>
+            <option value="Svalbard and Jan Mayen">
+              Svalbard and Jan Mayen
+            </option>
+            <option value="Swaziland">Swaziland</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Tajikistan">Tajikistan</option>
+            <option value="Tanzania, United Republic of">
+              Tanzania, United Republic of
+            </option>
+            <option value="Thailand">Thailand</option>
+            <option value="Timor-leste">Timor-leste</option>
+            <option value="Togo">Togo</option>
+            <option value="Tokelau">Tokelau</option>
+            <option value="Tonga">Tonga</option>
+            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Turkmenistan">Turkmenistan</option>
+            <option value="Turks and Caicos Islands">
+              Turks and Caicos Islands
+            </option>
+            <option value="Tuvalu">Tuvalu</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="United States Minor Outlying Islands">
+              United States Minor Outlying Islands
+            </option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vanuatu">Vanuatu</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Viet Nam">Viet Nam</option>
+            <option value="Virgin Islands, British">
+              Virgin Islands, British
+            </option>
+            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+            <option value="Wallis and Futuna">Wallis and Futuna</option>
+            <option value="Western Sahara">Western Sahara</option>
+            <option value="Yemen">Yemen</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
               </select>
-              
-              
-              <label class="language" for="language">
-                Language(optional):
-                <select class="form-select" id="language" required>
-                  <option value="">Selec A language</option>  
-                  <option>Afrikaans</option>
-                    <option>Albanian</option>
-                    <option>Amharic</option>
-                    <option>Arabic</option>
-                    <option>Armenian</option>
-                    <option>Azerbaijani</option>
-                    <option>Basque</option>
-                    <option>Belarusian</option>
-                    <option>Bengali</option>
-                    <option>Bosnian</option>
-                    <option>Bulgarian</option>
-                    <option>Catalan</option>
-                    <option>Cebuano</option>
-                    <option>Chichewa</option>
-                    <option>Chinese</option>
-                    <option>Corsican</option>
-                    <option>Croatian</option>
-                    <option>Czech</option>
-                    <option>Danish</option>
-                    <option >Dutch</option>
-                    <option>English</option>
-                    <option>Esperanto</option>
-                    <option>Estonian</option>
-                    <option>Finnish</option>
-                    <option>French</option>
-                    <option>Frisian</option>
-                    <option>Galician</option>
-                    <option>Georgian</option>
-                    <option>German</option>
-                    <option>Greek</option>
-                    <option>Gujarati</option>
-                    <option>Haitian Creole</option>
-                    <option>Hausa</option>
-                    <option>Hawaiian</option>
-                    <option>Hebrew</option>
-                    <option>Hindi</option>
-                    <option>Hmong</option>
-                    <option>Hungarian</option>
-                    <option>Icelandic</option>
-                    <option>Igbo</option>
-                    <option>Indonesian</option>
-                    <option>Irish</option>
-                    <option>Italian</option>
-                    <option>Japanese</option>
-                    <option>Javanese</option>
-                    <option>Kannada</option>
-                    <option>Kazakh</option>
-                    <option>Khmer</option>
-                    <option>Korean</option>
-                    <option>Kurdish</option>
-                    <option>Kyrgyz</option>
-                    <option>Lao</option>
-                    <option>Latin</option>
-                    <option>Latvian</option>
-                    <option>Lithuanian</option>
-                    <option>Luxembourgish</option>
-                    <option>Macedonian</option>
-                    <option>Marathi</option>
-                    <option>Mongolian</option>
-                    <option>Myanmar (Burmese)</option>
-                    <option>Nepali</option>
-                    <option>Norwegian</option>
-                    <option>Pashto</option>
-                    <option>Persian</option>
-                    <option>Polish</option>
-                    <option>Portuguese</option>
-                    <option>Punjabi</option>
-                    <option>Romanian</option>
-                    <option>Russian</option>
-                    <option>Samoan</option>
-                    <option>Scots Gaelic</option>
-                    <option>Serbian</option>
-                    <option>Sesotho</option>
-                    <option>Shona</option>
-                    <option>Sindhi</option>
-                    <option>Sinhala</option>
-                    <option>Slovak</option>
-                    <option>Slovenian</option>
-                    <option>Somali</option>
-                    <option>Spanish</option>
-                    <option>Sundanese</option>
-                    <option>Swahili</option>
-                    <option>Swedish</option>
-                    <option>Tajik</option>
-                    <option>Tamil</option>
-                    <option>Telugu</option>
-                    <option>Thai</option>
-                    <option>Turkish</option>
-                    <option>Ukrainian</option>
-                    <option>Urdu</option>
-                    <option>Uzbek</option>
-                    <option>Vietnamese</option>
-                    <option>Welsh</option>
-                    <option>Xhosa</option>
-                    <option>Yiddish</option>
-                    <option>Yoruba</option>
-                    <option>Zulu</option>
-                </select>
-            </label><br>
-            <label for="bio">Bio (optional):</label>
-            <textarea id="bio" name="bio"></textarea>
+          </label><br>
 
-            <span style="font-family:'Courier New', Courier, monospace; font-size: 16px;">  </span>
-        </div>
-        <button onclick="closeForm(false)" type="submit">
-          Submit
-        </button>
-    </form>
+          <label for="zipcode">ZIP code:</label>
+          <input type="text" id="zipcode" name="zipcode" required>
+          <label class="email" for="email" required>
+            Email:
+            <input id="email" placeholder="john.doe@gmail.com"/>
+        </label><br>
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+              <option value="">None</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            
+            
+            <label class="language" for="language">
+              Language(optional):
+              <select class="form-select" id="language" required>
+                <option value="">Selec A language</option>  
+                <option>Afrikaans</option>
+                  <option>Albanian</option>
+                  <option>Amharic</option>
+                  <option>Arabic</option>
+                  <option>Armenian</option>
+                  <option>Azerbaijani</option>
+                  <option>Basque</option>
+                  <option>Belarusian</option>
+                  <option>Bengali</option>
+                  <option>Bosnian</option>
+                  <option>Bulgarian</option>
+                  <option>Catalan</option>
+                  <option>Cebuano</option>
+                  <option>Chichewa</option>
+                  <option>Chinese</option>
+                  <option>Corsican</option>
+                  <option>Croatian</option>
+                  <option>Czech</option>
+                  <option>Danish</option>
+                  <option >Dutch</option>
+                  <option>English</option>
+                  <option>Esperanto</option>
+                  <option>Estonian</option>
+                  <option>Finnish</option>
+                  <option>French</option>
+                  <option>Frisian</option>
+                  <option>Galician</option>
+                  <option>Georgian</option>
+                  <option>German</option>
+                  <option>Greek</option>
+                  <option>Gujarati</option>
+                  <option>Haitian Creole</option>
+                  <option>Hausa</option>
+                  <option>Hawaiian</option>
+                  <option>Hebrew</option>
+                  <option>Hindi</option>
+                  <option>Hmong</option>
+                  <option>Hungarian</option>
+                  <option>Icelandic</option>
+                  <option>Igbo</option>
+                  <option>Indonesian</option>
+                  <option>Irish</option>
+                  <option>Italian</option>
+                  <option>Japanese</option>
+                  <option>Javanese</option>
+                  <option>Kannada</option>
+                  <option>Kazakh</option>
+                  <option>Khmer</option>
+                  <option>Korean</option>
+                  <option>Kurdish</option>
+                  <option>Kyrgyz</option>
+                  <option>Lao</option>
+                  <option>Latin</option>
+                  <option>Latvian</option>
+                  <option>Lithuanian</option>
+                  <option>Luxembourgish</option>
+                  <option>Macedonian</option>
+                  <option>Marathi</option>
+                  <option>Mongolian</option>
+                  <option>Myanmar (Burmese)</option>
+                  <option>Nepali</option>
+                  <option>Norwegian</option>
+                  <option>Pashto</option>
+                  <option>Persian</option>
+                  <option>Polish</option>
+                  <option>Portuguese</option>
+                  <option>Punjabi</option>
+                  <option>Romanian</option>
+                  <option>Russian</option>
+                  <option>Samoan</option>
+                  <option>Scots Gaelic</option>
+                  <option>Serbian</option>
+                  <option>Sesotho</option>
+                  <option>Shona</option>
+                  <option>Sindhi</option>
+                  <option>Sinhala</option>
+                  <option>Slovak</option>
+                  <option>Slovenian</option>
+                  <option>Somali</option>
+                  <option>Spanish</option>
+                  <option>Sundanese</option>
+                  <option>Swahili</option>
+                  <option>Swedish</option>
+                  <option>Tajik</option>
+                  <option>Tamil</option>
+                  <option>Telugu</option>
+                  <option>Thai</option>
+                  <option>Turkish</option>
+                  <option>Ukrainian</option>
+                  <option>Urdu</option>
+                  <option>Uzbek</option>
+                  <option>Vietnamese</option>
+                  <option>Welsh</option>
+                  <option>Xhosa</option>
+                  <option>Yiddish</option>
+                  <option>Yoruba</option>
+                  <option>Zulu</option>
+              </select>
+          </label><br>
+          <label for="bio">Bio (optional):</label>
+          <textarea id="bio" name="bio"></textarea>
 
-    <header>
-        <div class = "header-container">
-            <a href = "index.html"><img src = "logo.png" alt = "logo"></a>
-            <div>
-                <a href="#home" onclick="highlightHeader('home')"> Home </a>
-            </div>
-            <div>
-                <a href="#profile" onclick="highlightHeader('profile')"> Profile </a>
-            </div>
-            <div>
-                <a href="#mentors" onclick="highlightHeader('mentors')"> Mentors </a>
-            </div>
-            <div>
-                <a href = "#contact-anchor"> Contact </a>
-            </div>
-            <div onclick="showForm()">
-                <a href = "#login-form"> Sign In / Sign Up </a>
-            </div>
-        </div>
-    </header>
-    <div class="sections">
-        <div class="section" id="home">
-            <div>
-                <h1>
-                    Manatee Mentorates: Where You Find The Mentor For <span style = "text-decoration: underline;">You.</span>
-                </h1>
-                <p>
-                    Manatee Mentorates is a mentoring programme that offers individualised support to university students dealing with stress and mental health issues. Our programme pairs each student with a personalised mentor that best suits their needs. Our mentors have the expertise to help you find the right strategies to cope with stress and mental health issues, and to help you develop the skills and confidence to successfully manage your studies.
+          <span style="font-family:'Courier New', Courier, monospace; font-size: 16px;">  </span>
+      </div>
+      <button onclick="closeForm(false)" type="submit">
+        Submit
+      </button>
+  </form>
 
-                    We understand that university life can be overwhelming, and we want to make sure that you have the support you need to make the most of your studies. With Manatee Mentorates, you can look forward to having a mentor who understands your struggles and can help you develop the skills and confidence to overcome them.
-                    
-                    Don't let stress and mental health issues stand in the way of your success. Take advantage of the unique support offered by Manatee Mentorates and get the help you need to get the most out of your university experience.        
-                </p>
-            </div>
-            <div>
-                <h2>
-                    How Manatee Mentorates Helped Me
-                </h2>
-                <img src="image_0.png" style="float: left;" alt="person smiling with thumbs up">
-                <p>
-                    I recently had the pleasure of participating in the Manatee Mentorates program, and I must say I was very impressed. Not only did I feel supported and understood, but I also felt like I was getting the best advice possible. The mentors were understanding and patient, and they took the time to understand my individual situation and offered tailored advice. I'm grateful for the knowledge and understanding that I gained from the program, and I'm sure it will help me manage my stress levels and mental health issues in the future. I highly recommend Manatee Mentorates to anyone who's looking for a mentor or guidance on managing their mental health. Thanks for the great experience!
+  <header>
+      <div class = "header-container">
+          <a href = "index.html"><img src = "logo.png" alt = "logo"></a>
+          <div>
+              <a href="#home" onclick="highlightHeader('home')"> Home </a>
+          </div>
+          <div>
+              <a href="#profile" onclick="highlightHeader('profile')"> Profile </a>
+          </div>
+          <div>
+              <a href="#mentors" onclick="highlightHeader('mentors')"> Mentors </a>
+          </div>
+          <div>
+              <a href = "#contact-anchor"> Contact </a>
+          </div>
+          <div onclick="showForm()">
+              <a href = "#login-form"> Sign In / Sign Up </a>
+          </div>
+      </div>
+  </header>
+  <div class="sections">
+      <div class="section" id="home">
+          <div>
+              <h1>
+                  Manatee Mentorates: Where You Find The Mentor For <span style = "text-decoration: underline;">You.</span>
+              </h1>
+              <p>
+                  Manatee Mentorates is a mentoring programme that offers individualised support to university students dealing with stress and mental health issues. Our programme pairs each student with a personalised mentor that best suits their needs. Our mentors have the expertise to help you find the right strategies to cope with stress and mental health issues, and to help you develop the skills and confidence to successfully manage your studies.
 
-                    -Martin
-                </p>
-            </div>
-            <div>
-                <h2>
-                    From Struggle Comes Success
-                </h2>
-                <img src="image_1.png" style="float: right;" alt="person smiling with thumbs up">
-                <p>
-                    I was feeling overwhelmed and lost before I joined Manatee Mentorates. I was struggling to keep up with my Aerospace Engineering coursework, and I found myself feeling really stressed out and lacking motivation. But then I joined Manatee Mentorates and it completely changed my outlook! My mentor helped me develop better time management skills, so I was able to manage my coursework more efficiently. With their help, I was able to stay on top of my studies and I felt more in control of my academic success. Manatee Mentorates truly saved me from my academic woes, and I'm so glad I found them. I would highly recommend them to anyone who is struggling with their studies!
+                  We understand that university life can be overwhelming, and we want to make sure that you have the support you need to make the most of your studies. With Manatee Mentorates, you can look forward to having a mentor who understands your struggles and can help you develop the skills and confidence to overcome them.
+                  
+                  Don't let stress and mental health issues stand in the way of your success. Take advantage of the unique support offered by Manatee Mentorates and get the help you need to get the most out of your university experience.        
+              </p>
+          </div>
+          <div>
+              <h2>
+                  How Manatee Mentorates Helped Me
+              </h2>
+              <img src="image_0.png" style="float: left;" alt="person smiling with thumbs up">
+              <p>
+                  I recently had the pleasure of participating in the Manatee Mentorates program, and I must say I was very impressed. Not only did I feel supported and understood, but I also felt like I was getting the best advice possible. The mentors were understanding and patient, and they took the time to understand my individual situation and offered tailored advice. I'm grateful for the knowledge and understanding that I gained from the program, and I'm sure it will help me manage my stress levels and mental health issues in the future. I highly recommend Manatee Mentorates to anyone who's looking for a mentor or guidance on managing their mental health. Thanks for the great experience!
 
-                -Felicia
-            </p>
-        </div>
-        </div>
-        <div class="section" id="profile">
-        <!-- TODO: make a user profile here-->
-        <!-- TODO: Maddy-->
-        <div class="section-header">
-            <h1> Johan Anand </h1>
-            <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
-            <span class="review-stars"> ★★★★ </span> 8 students helped
-        </div>
-        <div class="section-about">
-            <h2> About </h2>
-            <img src="image_3.png" style="float:left;">
-            <p>
+                  -Martin
+              </p>
+          </div>
+          <div>
+              <h2>
+                  From Struggle Comes Success
+              </h2>
+              <img src="image_1.png" style="float: right;" alt="person smiling with thumbs up">
+              <p>
+                  I was feeling overwhelmed and lost before I joined Manatee Mentorates. I was struggling to keep up with my Aerospace Engineering coursework, and I found myself feeling really stressed out and lacking motivation. But then I joined Manatee Mentorates and it completely changed my outlook! My mentor helped me develop better time management skills, so I was able to manage my coursework more efficiently. With their help, I was able to stay on top of my studies and I felt more in control of my academic success. Manatee Mentorates truly saved me from my academic woes, and I'm so glad I found them. I would highly recommend them to anyone who is struggling with their studies!
+
+              -Felicia
+          </p>
+      </div>
+      </div>
+      <div class="section" id="profile">
+      <!-- TODO: make a user profile here-->
+      <!-- TODO: Maddy-->
+      <div class="section-header">
+          <h1> Johan Anand </h1>
+          <span style="font-style: italic;">Lecturer for Applied Physics, Msc. in Fluid Dynamics</span><br>
+          <span class="review-stars"> ★★★★ </span> 8 students helped
+      </div>
+      <div class="section-about">
+          <h2> About </h2>
+          <img src="image_3.png" style="float:left;">
+          <p>
 I'm Johan Anand, a physics lecturer and master of fluid dynamics. I have been teaching physics for over 20 years and have a deep understanding of the subject. My research focuses on applying the principles of fluid dynamics to create innovative solutions to energy and environmental challenges.
 I'm passionate about sharing my knowledge and mentoring students to help them reach their full potential. I believe in being a source of guidance and support, helping them to explore and understand the topic. I'm very patient and have a knack for breaking down complex ideas into understandable concepts.
 I'm an excellent communicator and have an approachable nature that allows students to feel comfortable asking questions. I'm also an excellent listener, taking time to understand each student's individual learning style and goals.
 Whether it's helping them understand the basics of physics or helping them develop their problem-solving skills, I'm confident that I can be a great mentor.
-            </p>     
-        </div>
-        <div class="section-availability">
-            <h2> Availability </h2>
-            <table id="availability-table">
-                <tr>
-                    <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
-                </tr>
-            </table>
-        </div>
-        <div class="section-contact">
-            <h2> Contact </h2>
-            <img src="image_4.png" style="float:right;">
-            <p>
-                <br>
-                US of A <br>
-                Address: 123 Dream Street <br>
-                Zipcode: 12345 <br>
-                Email: lostsocks@dreamland.com <br>
-                Tel: (123) 456-7890
-                <br>
-            </p>
-            
-        </div>
-        </div>
-        <div class="section" id="mentors">
-        <!-- TODO make a searchbox here where you can search for mentors-->
-        <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
-        <h2> Search for a mentor that suits you! </h2>
-            <div class="searchbox">
-                <form id="search-form">
-                    <label for="skills">Skills:</label>
-                    <input type="text" id="skills" name="skills" placeholder="e.g.Coaching - Problem solving ">
-                    
-                    <label for="jobcat">Job Category:</label>
-                    <select id="jobcat" name="jobcat">
-                        <option value="">Select A category</option>
-                        <option value="accounting and finance">Accounting and finance</option>
-                        <option value="banking">Banking</option>
-                        <option value="business and management">Business and Management</option>
-                        <option value="computing and IT">Computing and IT</option>  
-                        <option value="consultancy">Consultancy</option> 
-                        <option value="education">Education</option> 
-                        <option value="healthcare & medicine">Healthcare & Medicine</option> 
-                        <option value="legal">Legal</option> 
-                        <option value="marketing and pr">Marketing and PR</option>
-                        <option value="science and research">Science and Research</option> 
-                        
-                    </select>
-                    
-                    <label for="company">Company:</label>
-                    <input type="text" id="company" name="company" placeholder="e.g.Advent Corporation">
-                    
-                    <label for="location">Location:</label>
-                    <input type="text" id="location" name="location" placeholder="e.g.Roterrdam">
-                    
-                    <label class="rating-label"><strong>Reviews  </strong>
-                    <input class="rating" max="5" oninput="this.style.setProperty('--value', `${this.valueAsNumber}`)"
-                    step="0.5" style="--value:2.5" type="range" value="2.5"> </label>
-  
-                    
-                    <input type="submit" value="Search">
-                </form>
-            </div>
-            <h2> Book a meeting </h2>
-            <div class="meeting-request">
-                <form>
-                  <label for="mentor">Mentor:</label>
-                  <select id="mentor" name="mentor">
-                    <option value="">Select a mentor</option>
-                    <option id ="profile" value="Johan Anand">Johan Anand</option>
-                    <option id ="profile" value="Bill Bowerman">Bill Bowerman</option>
-                    <option id ="profile" value="Lenny Wilkens">Lenny Wilkens</option>
-                    <option id ="profile" value="Geno Auriemma">Geno Auriemma</option>
+          </p>     
+      </div>
+      <div class="section-availability">
+          <h2> Availability </h2>
+          <table id="availability-table">
+              <tr>
+                  <th> Monday </th> <th> Tuesday </th> <th> Wednesday </th> <th> Thursday </th> <th> Friday </th> <th> Saturday </th> <th> Sunday </th>
+              </tr>
+          </table>
+      </div>
+      <div class="section-contact">
+          <h2> Contact </h2>
+          <img src="image_4.png" style="float:right;">
+          <p>
+              <br>
+              US of A <br>
+              Address: 123 Dream Street <br>
+              Zipcode: 12345 <br>
+              Email: lostsocks@dreamland.com <br>
+              Tel: (123) 456-7890
+              <br>
+          </p>
+          
+      </div>
+      </div>
+      <div class="section" id="mentors">
+      <!-- TODO make a searchbox here where you can search for mentors-->
+      <!-- Mentees should be able to search for mentors based on their skills or job category, company, review scores, and location. -->
+      <h2> Search for a mentor that suits you! </h2>
+          <div class="searchbox">
+              <form id="search-form">
+                  <label for="skills">Skills:</label>
+                  <input type="text" id="skills" name="skills" placeholder="e.g.Coaching - Problem solving ">
+                  
+                  <label for="jobcat">Job Category:</label>
+                  <select id="jobcat" name="jobcat">
+                      <option value="">Select A category</option>
+                      <option value="accounting and finance">Accounting and finance</option>
+                      <option value="banking">Banking</option>
+                      <option value="business and management">Business and Management</option>
+                      <option value="computing and IT">Computing and IT</option>  
+                      <option value="consultancy">Consultancy</option> 
+                      <option value="education">Education</option> 
+                      <option value="healthcare & medicine">Healthcare & Medicine</option> 
+                      <option value="legal">Legal</option> 
+                      <option value="marketing and pr">Marketing and PR</option>
+                      <option value="science and research">Science and Research</option> 
                       
                   </select>
-              
-                  <label for="prps">The purpose of this meeting is :</label>
-                  <textarea id="prps" name="prps" ></textarea>
-              
-                  <label for="date">Available Dates:</label>
-                  <input type="date" id="availability-table" name="date"> <br>
-              
-                  <button onclick="myFunction()">Send Request</button>
-                  <p id="demo"></p>
-                    <script>
-                    function myFunction() {
-                    document.getElementById("demo").innerHTML = "Your meeting request has been Submitted. it has to be Approved by The Mentos";
-                        }
-                    </script>
-                </form>
-              </div>
-              
-                                    
-        </div>
-    </div>
+                  
+                  <label for="company">Company:</label>
+                  <input type="text" id="company" name="company" placeholder="e.g.Advent Corporation">
+                  
+                  <label for="location">Location:</label>
+                  <input type="text" id="location" name="location" placeholder="e.g.Roterrdam">
+                  
+                  <label class="rating-label"><strong>Reviews  </strong>
+                  <input class="rating" max="5" oninput="this.style.setProperty('--value', `${this.valueAsNumber}`)"
+                  step="0.5" style="--value:2.5" type="range" value="2.5"> </label>
 
-    <footer>
-        <h1 id="contact-anchor">
-            Contact
-        </h1>
-        <img src="image_2.png" style="float: right">
-        <p>
-            <br>
-            Tel: +31 6 123 456 78 <br>
-            Email: manateementorates@info <br>
-            Address: Volenpark 123, Damsterdam 
-        </p>
-    </footer>
+                  
+                  <input type="submit" value="Search">
+              </form>
+          </div>
+          <h2> Book a meeting </h2>
+          <div class="meeting-request">
+              <form>
+                <label for="mentor">Mentor:</label>
+                <select id="mentor" name="mentor">
+                  <option value="">Select a mentor</option>
+                  <option id ="profile" value="Johan Anand">Johan Anand</option>
+                  <option id ="profile" value="Bill Bowerman">Bill Bowerman</option>
+                  <option id ="profile" value="Lenny Wilkens">Lenny Wilkens</option>
+                  <option id ="profile" value="Geno Auriemma">Geno Auriemma</option>
+                    
+                </select>
+            
+                <label for="prps">The purpose of this meeting is :</label>
+                <textarea id="prps" name="prps" ></textarea>
+            
+                <label for="date">Available Dates:</label>
+                <input type="date" id="availability-table" name="date"> <br>
+            
+                <button onclick="myFunction()">Send Request</button>
+                <p id="demo"></p>
+                  <script>
+                  function myFunction() {
+                  document.getElementById("demo").innerHTML = "Your meeting request has been Submitted. it has to be Approved by The Mentos";
+                      }
+                  </script>
+              </form>
+            </div>
+            
+                                  
+      </div>
+  </div>
+
+  <footer>
+      <h1 id="contact-anchor">
+          Contact
+      </h1>
+      <img src="image_2.png" style="float: right">
+      <p>
+          <br>
+          Tel: +31 6 123 456 78 <br>
+          Email: manateementorates@info <br>
+          Address: Volenpark 123, Damsterdam 
+      </p>
+  </footer>
 </body>
